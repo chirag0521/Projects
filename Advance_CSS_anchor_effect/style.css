@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 40px;    */
+    anchor-name: --some-anchor;
+   background-color: black;
+
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: monospace;
+    padding: 10px 20px;
+    color: white;
+}
+a:hover{
+    anchor-name: --some-anchor;
+    /* color: white; */
+}
+.anchor{
+    /* height: 40px; */
+    /* width: 80px; */
+    border-radius: 5px;
+    background-color: rgb(43, 43, 43);
+    position: absolute;
+    position-anchor: --some-anchor;
+    pointer-events: none;
+    top: anchor(top);
+    left:anchor(left);
+    right: anchor(right);
+    bottom: anchor(bottom);
+    transition: all 0.3s linear;
+    mix-blend-mode: difference;
+}

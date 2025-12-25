@@ -1,0 +1,147 @@
+
+@font-face {
+    font-family: Gibroma;
+    src: url(./gibroma.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Gibroma"; */
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}
+#nav{
+    padding-top: 20px;
+    width: 100;
+    height: 45px;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav1{
+    width: 30%;
+    height: 40px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#nav1 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+}
+#nav2{
+    width: 30%;
+    height: 40px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nav2 h2{
+    font-family: 'Gibroma';
+    font-weight: 500;
+
+}
+
+#nav3{
+    width: 30%;
+    height: 40px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#nav3 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#main h1{
+    padding-left: 150px;
+    font-size: 230px;
+    font-weight: 400;
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: 'Gibroma';
+    position: relative;
+    z-index: 5;
+}
+#bottomleft{
+    position: absolute;
+    bottom: 10%;
+    left:5%;
+    width: 150px;
+    /* background-color: red; */
+}
+#bottomleft h3{
+   font-size: 11px;
+   margin-bottom: 2px;
+   font-weight: 700;
+}
+
+#bottomleft h4{
+   font-size: 11px;
+   margin-top: 3px;
+   margin-bottom: 2px;
+     font-weight: 700;
+}
+#bottomleft p{
+    margin-bottom: 2px;
+    font-size: 8px;
+}
+
+#bottombar{
+    width: 100%;
+    /* background-color: red; */
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#bottombar h3{
+    font-size: 20px;
+    padding: 0 50px;
+    font-family: 'Gibroma';
+}
+#bottombar h3 i{
+    font-size: 16px;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+#main>img{
+    position: absolute;
+}
+#first{
+    height: 200px;
+    width: 210px;
+    top: 50%;
+    left: 52%;
+}
+#second{
+    height: 200px;
+    width: 180px;
+    top: 60%;
+    left: 65%;  
+}
+#third{
+    height: 350px;
+    top: 20%;
+    left: 75%; 
+    z-index: 1;
+    object-fit: cover;
+
+}

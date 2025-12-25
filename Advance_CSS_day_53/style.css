@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box{
+    height: 200px;
+    width: 600px;
+    animation: changeBGC 5s forwards ;
+}
+
+@keyframes changeBGC {
+    from{
+        background-color: rgb(102, 96, 96);
+        scale: 1;
+    }
+    to{
+        background-color: red;
+        border-radius: 50%;
+        scale: 0.5;
+    }
+}

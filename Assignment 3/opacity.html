@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opacity Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      text-align: center;
+      padding: 40px;
+    }
+
+    /* Example 1: Opacity applied to entire box (text also becomes transparent) */
+    .box1 {
+      width: 200px;
+      height: 150px;
+      background-color: tomato;
+      color: white;
+      opacity: 0.5; /* entire element transparent */
+      margin: 20px auto;
+      padding-top: 60px;
+      border-radius: 10px;
+    }
+
+    /* Example 2: Only background is transparent (text stays solid) */
+    .box2 {
+      width: 200px;
+      height: 150px;
+      background-color: rgba(0, 128, 0, 0.5); /* green, half transparent */
+      color: white;
+      margin: 20px auto;
+      padding-top: 60px;
+      border-radius: 10px;
+    }
+
+    /* Example 3: Dark overlay on image using opacity */
+    .image-container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0.5; /* makes it darker */
+    }
+
+    .image-container h2 {
+      position: absolute;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>CSS Opacity Examples</h1>
+
+  <div class="box1">Opacity 0.5</div>
+  <div class="box2">RGBA 0.5</div>
+
+  <div class="image-container">
+    <img src="https://images.hdqwalls.com/download/delorean-vaporwave-retro-gq-1366x768.jpg" alt="Car">
+    <div class="overlay"></div>
+    <h2>Overlay Example</h2>
+  </div>
+
+</body>
+</html>

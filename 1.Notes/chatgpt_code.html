@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 120px;
+  height: 120px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+/* CASE 1 */
+.case1 {
+  top: 20px;
+  left: 20px;
+  transform: translate(-50%, -50%);
+  background: blue;
+}
+
+/* CASE 2 */
+.case2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: green;
+}
+
+/* CASE 3 */
+.case3 {
+  top: 100px;
+  left: 300px;
+  transform: translate(-50%, -50%);
+  background: orange;
+}
+</style>
+</head>
+<body>
+
+<div class="box case1">CASE 1</div>
+<div class="box case2">CASE 2</div>
+<div class="box case3">CASE 3</div>
+<script src="script.js"></script>
+</body>
+</html>
