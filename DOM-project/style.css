@@ -5,6 +5,8 @@
     --tri1:#F3BA17;
     --tri2:#74512D;
     --red:red;
+    --green:rgb(59, 196, 59);
+    --blue:rgb(0, 153, 255);
 }
 
 @font-face {
@@ -254,9 +256,7 @@ section.allElems{
 .mark-imp label{
     font-size: 15px;
 }
-.daily-planner-fullpage{
-    display: block;
-}
+
 .daily-planner-fullpage h2{
     font-size: 60px;
     /* text-align: center; */
@@ -290,6 +290,7 @@ section.allElems{
     left: 1%;
     color: var(--tri1);
     font-size: 12px;
+    font-weight: 700;
 }
 
 .day-planner .day-planner-time input{
@@ -303,4 +304,149 @@ section.allElems{
     color: var(--pri);
     padding-top: 25px;
     margin-bottom: 10px;
+}
+
+/* MOTIVATION STARTS  */
+
+.motivational-fullpage{
+    /* display: block; */
+    position: relative; 
+}
+
+.motivation-fullPage-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.motivational-fullpage .motivation-container{
+     height: 500px;
+     width: 80%;
+     position: relative;
+     border-radius: 50px;
+}
+
+.motivational-fullpage .motivation-container::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 50px;
+    scale: 1.15;
+    background-color: var(--tri1);
+    filter: blur(150px);
+    z-index: 8;
+    
+}
+
+.motivation-container .motivation-wrapper{
+    z-index: 10;
+    /* height: 100%; */
+    width: 100%;
+    position: absolute;
+    background-color: var(--tri1);
+    border-radius: 30px;
+    padding: 17px;
+}
+
+.motivation-1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.motivation-1 h2{
+   background-color: var(--tri2);
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    width: fit-content;
+}
+.motivation-2{
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.motivation-2 h1{
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--sec);
+}
+
+.motivation-3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.motivation-3 h2{
+    background-color: var(--tri2);
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 30px;
+    width: fit-content;
+}
+
+.motivation-container .motivation-wrapper img{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    opacity: 0.2;
+    height: 70px;
+}
+
+/* POMODORO TIMER */
+
+.pomodoro-fullpage{
+    /* display: block; */
+    position: relative;
+}
+.pomodoro-fullpage h2{
+    font-size: 50px;
+}
+
+.pomodoro-fullpage .pomo-timer{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.pomo-timer h1{
+    font-size: 130px;
+}
+.pomo-timer button{
+    background-color: var(--tri1);
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 5px 5px 0px black;
+    transition: all ease 0.1s;
+    font-weight: 700;
+}
+
+.pomo-timer button:active{
+    box-shadow: 0px 0px 0px black;
+    scale: 0.97;
+}
+
+.pomodoro-fullpage .session{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: var(--green);
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+
 }

@@ -14,7 +14,7 @@ function openFeatures() {
 
     })
 }
-// openFeatures()
+openFeatures()
 
 function todoList() {
     let currentTask = []
@@ -82,32 +82,130 @@ function todoList() {
 
 }
 
-// todoList()
+todoList()
 
-let hours = Array.from({ length: 18 }, (el, idx) => `${5 + idx}:00 - ${6 + idx}:00`)
+function dailyPlanner() {
+    var dayPlanner = document.querySelector('.day-planner')
 
-let wholeDaySum = ''
+    var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
 
-hours.forEach(function (elem,idx) {
-    wholeDaySum = wholeDaySum + `<div class="day-planner-time">
+    let hours = Array.from({ length: 18 }, (_, idx) => `${5 + idx}:00 - ${6 + idx}:00`)
+
+
+    let wholeDaySum = ''
+
+    hours.forEach(function (elem, idx) {
+
+        var savedData = dayPlanData[idx] || ''
+        wholeDaySum = wholeDaySum + `<div class="day-planner-time">
     <p>${elem}</p>
-    <input id=${idx} type="text" placeholder="...">
+    <input id=${idx} type="text" placeholder="..." value=${savedData}>
     </div>`
-})
-
-var dayPlanData =JSON.parse(localStorage.getItem('dayPlanData')) || {}
-
-var dayPlanner = document.querySelector('.day-planner')
-dayPlanner.innerHTML = wholeDaySum
-
-var dayPlannerInput = document.querySelectorAll('.day-planner input')
-
-
-dayPlannerInput.forEach(function(elem){
-    elem.addEventListener('input', function(){
-        dayPlanData[elem.id] = elem.value
-        localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
-        
     })
+
+    dayPlanner.innerHTML = wholeDaySum
+
+
+    var dayPlannerInput = document.querySelectorAll('.day-planner input')
+
+    dayPlannerInput.forEach(function (elem) {
+        elem.addEventListener('input', function () {
+            dayPlanData[elem.id] = elem.value
+            localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
+
+        })
+
+    })
+}
+
+dailyPlanner()
+
+function motivationalQuote() {
+    let motivationQuote = document.querySelector('.motivation-2 h1')
+    let motivationAuthor = document.querySelector('.motivation-3 h2')
+    async function fetchQuote() {
+        let response = await fetch('https://api.quotable.io/random')
+
+        let data = await response.json()
+
+        motivationQuote.innerHTML = data.content
+        motivationAuthor.innerHTML = `-- ${data.author}`
+
+
+    }
+    fetchQuote()
+}
+motivationalQuote()
+
+function pomodoroTimer(){
+    let timer = document.querySelector('.pomo-timer h1')
+var startBtn = document.querySelector('.pomo-timer .start-timer')
+var pauseBtn = document.querySelector('.pomo-timer .pause-timer')
+var resetBtn = document.querySelector('.pomo-timer .reset-timer')
+var session = document.querySelector('.pomodoro-fullpage .session')
+var isWorkSession = true
+let timerInterval = null
+let totalSeconds = 25 * 60
+
+
+function updateTime() {
+    let minutes = Math.floor(totalSeconds / 60)
+    let seconds = totalSeconds % 60
+    timer.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+}
+
+function startTimer() {
+    clearInterval(timerInterval)
+    if (isWorkSession) {
+
+
+        timerInterval = setInterval(function () {
+            if (totalSeconds > 0) {
+                totalSeconds--
+                updateTime()
+            } else {
+                isWorkSession = false
+                clearInterval(timerInterval)
+                timer.innerHTML = '05:00'
+                 session.innerHTML = 'Lets take a Break'
+                 session.style.backgroundColor = 'var(--blue)'
+                 totalSeconds = 5 * 60
+            }
+        }, 1000)
+        
+    } else {
+
+
     
-})
+    timerInterval = setInterval(function () {
+        if (totalSeconds > 0) {
+            totalSeconds--
+            updateTime()
+        } else {
+            isWorkSession = true
+            clearInterval(timerInterval)
+            timer.innerHTML = '25:00'
+             session.innerHTML = 'Work Session'
+             session.style.backgroundColor = 'var(--green)'
+             totalSeconds = 25 * 60
+        }
+    
+    }, 1000)
+}
+}
+function pauseTimer() {
+    clearInterval(timerInterval)
+}
+function resetTimer() {
+    totalSeconds = 25 * 60
+    clearInterval(timerInterval)
+    updateTime()
+}
+startBtn.addEventListener('click', startTimer)
+pauseBtn.addEventListener('click', pauseTimer)
+resetBtn.addEventListener('click', resetTimer)
+}
+pomodoroTimer()
+
+
+
