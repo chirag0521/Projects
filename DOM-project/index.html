@@ -6,38 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://www.freepnglogos.com/uploads/batman-logo-png-images-0.png"
+        type="image/x-icon">
     <title>Productivity Dashboard</title>
 </head>
 
 <body>
     <div id="main">
-        <!-- <nav></nav> -->
+        <nav>
+            <div class="nav-in">
+                <h2>Productivity Dashboard</h2>
+                <div class="theme">
+                    
+                    <h4>Change theme</h4>
+                </div>
+            </div>
+
+        </nav>
         <section class="allElems">
-            <div class="todo elem" id="0">
-                <img src="https://images.unsplash.com/photo-1762851144020-751913512b10?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYzfENEd3V3WEpBYkV3fHxlbnwwfHx8fHw%3D"
-                    alt="">
-                <h2>To Do List</h2>
+            <header>
+                <div class="header1">
+                    <h2>30 December, 2025</h2>
+                    <h1>Tuesday, 6:00 am</h1>
+                    <h4>Hailakandi</h4>
+                </div>
+                <div class="header2">
+                    <h2>20°C</h2>
+                    <h4>Light rain</h4>
+                    <h3 class="feelsLike">Feels like: 50°C</h3>
+                    <h3 class="humidity">Humidity: 49%</h3>
+                    <h3 class="wind">Wind: 10 km/h</h3>
+                </div>
+            </header>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                    <img src="https://images.unsplash.com/photo-1762851144020-751913512b10?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYzfENEd3V3WEpBYkV3fHxlbnwwfHx8fHw%3D"
+                        alt="">
+                    <h2>To Do List</h2>
+                </div>
+                <div class="daily elem" id="1">
+                    <img src="https://images.unsplash.com/photo-1764336312138-14a5368a6cd3?q=80&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Daily Planner</h2>
+                </div>
+                <div class="moti elem" id="2">
+                    <img src="https://images.unsplash.com/photo-1754481249380-3b4ada5ebc67?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Motivation</h2>
+                </div>
+                <div class="pomo elem" id="3">
+                    <img src="https://images.unsplash.com/photo-1762170905134-e9e3b5692286?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Pomodoro Timer</h2>
+                </div>
+
             </div>
-            <div class="daily elem" id="1">
-                <img src="https://images.unsplash.com/photo-1764336312138-14a5368a6cd3?q=80&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="">
-                <h2>Daily Planner</h2>
-            </div>
-            <div class="moti elem" id="2">
-                <img src="https://images.unsplash.com/photo-1754481249380-3b4ada5ebc67?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="">
-                <h2>Motivation</h2>
-            </div>
-            <div class="pomo elem" id="3">
-                <img src="https://images.unsplash.com/photo-1762170905134-e9e3b5692286?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="">
-                <h2>Pomodoro Timer</h2>
-            </div>
-            <div class="goals elem" id="4">
-                <img src="https://images.unsplash.com/photo-1555808452-bed2e475c378?q=80&w=1530&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="">
-                <h2>Daily Goals</h2>
-            </div>
+
         </section>
         <section class="fullElem todo-list-fullpage">
             <button class="back" id="0"><i class="ri-close-line"></i></button>
@@ -106,10 +130,8 @@
             </div>
 
         </section>
-        <section class="fullElem daily-goals-fullpage">
-            <button class="back" id="4"><i class="ri-close-line"></i></button>
-            <h1>Daily Goals</h1>
-        </section>
+
+
     </div>
     <script src="script.js"> </script>
 </body>
