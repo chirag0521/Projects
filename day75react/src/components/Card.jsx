@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = (props) => {
+const Card = (props) => {  
   return (
     <div key={props.idx} className='lg:w-[18vw] md:w-[30vw] sm:w-[45vw] rounded-xl py-3 px-8 flex flex-col items-center text-center bg-white text-black'>
         <img className='h-24 w-24 rounded-full object-cover object-center' src={props.elem.imageUrl}alt="" />
