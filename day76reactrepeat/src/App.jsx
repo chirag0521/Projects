@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import Card from './components/Card'
 
 const App = () => {
   const [username, setUsername] = useState('')
   const [imageURL, setImageURL] = useState('')
   const [userRole, setUserRole] = useState('')
   const [userDesc, seTuserDesc] = useState('')
-  const [allUsers, setAllUsers] = useState([])
+
+  const localData = JSON.parse(localStorage.getItem('all-users')) || []
+  
+  const [allUsers, setAllUsers] = useState(localData)
+
+       
 
   const submitHandler = (e)=>{
     e.preventDefault()
@@ -15,7 +19,7 @@ const App = () => {
     oldUsers.push({username,imageURL,userRole,userDesc})
     setAllUsers(oldUsers)
     // setAllUsers([...allUsers,{username,imageURL,userRole,userDesc}])
-
+    localStorage.setItem('all-users', JSON.stringify(oldUsers))
 
     setUsername('')
     setImageURL('')
@@ -25,8 +29,15 @@ const App = () => {
   }
   const deleteHandler = (idx)=>{
     const copyUser = [...allUsers]
-    copyUser.splice(idx,1)
+    const confi = confirm('Are you sure,  you want to delete this')  // gives true or false i.e.in browser we see ok or cancel
+    if(confi){
+      copyUser.splice(idx,1)
+    } else{
+      alert('Element Not deleted')
+    }
     setAllUsers(copyUser)
+    localStorage.setItem('all-users', JSON.stringify(copyUser))
+
     
   }
   
@@ -76,7 +87,16 @@ const App = () => {
       <div className='px-4 py-2 flex flex-wrap gap-4'>
 
         {allUsers.map(function(elem,idx){
-          return <Card key={idx} idx={idx} elem = {elem} deleteHandler = {deleteHandler}/>
+          return <div key={idx} className='w-[20vw] bg-white text-black flex flex-col items-center rounded-xl px-8 py-8 text-center'>
+                      <img className='h-24 w-24 rounded-full object-center object-cover mb-2' src={elem.imageURL} alt="" />
+                      <h1 className='font-semibold text-2xl mt-2'>{elem.username}</h1>
+                      <h4 className='italic font-semibold text-lg text-red-400 m-2' >{elem.userRole}</h4>
+                      <p className='font-bold text-sm leading-tight text-center'>{elem.userDesc}</p>
+                      <button onClick={() => {
+                          deleteHandler(idx)
+                      }}
+                          className='bg-red-600 px-3 py-1 text-xs mt-4 text-white font-semibold rounded active:scale-96 cursor-pointer'>Remove</button>
+                  </div>
         })}
 
       </div>
